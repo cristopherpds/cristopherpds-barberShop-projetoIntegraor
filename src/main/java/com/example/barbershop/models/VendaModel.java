@@ -2,14 +2,25 @@ package com.example.barbershop.models;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "venda")
 public class VendaModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private LocalDate dataVenda;
     private ClienteModel cliente;
     private ProdutoModel items;
     private FuncionarioModel funcionario;
 
     public VendaModel(LocalDate dataVenda, ClienteModel cliente, ProdutoModel items, FuncionarioModel funcionario) {
-         if (items == null) {
+        if (items == null) {
             throw new IllegalArgumentException("Produto/Serviço é obrigatório.");
         }
         if (cliente == null) {
@@ -24,6 +35,7 @@ public class VendaModel {
         this.items = items;
         this.funcionario = funcionario;
     }
+
     public LocalDate getDataVenda() {
         return dataVenda;
     }

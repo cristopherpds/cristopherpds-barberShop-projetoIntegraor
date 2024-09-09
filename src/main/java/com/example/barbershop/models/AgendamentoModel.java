@@ -1,10 +1,23 @@
 package com.example.barbershop.models;
 
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-public class AgendamentoModel {
+@Entity
+@Table(name="agendamento")
+public class AgendamentoModel implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;
+    
     private LocalDate dataHoraAgendamento;
     private ClienteModel cliente;
     private ServicoModel service;

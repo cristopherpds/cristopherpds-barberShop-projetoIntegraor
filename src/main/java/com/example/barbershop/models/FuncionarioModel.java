@@ -5,7 +5,18 @@ import java.time.LocalDate;
 
 import com.example.barbershop.utils.CPFValidator;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "funcionario")
 public class FuncionarioModel {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;
     private String nome;
     private String cargo;
     private Double salario;
