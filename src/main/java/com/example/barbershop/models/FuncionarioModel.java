@@ -24,6 +24,7 @@ public class FuncionarioModel {
         this.cargo = cargo;
         this.salario = salario;
         this.commissao = commissao;
+        this.cpf = cpf;
         this.horario = horario;
     }
 
