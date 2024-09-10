@@ -1,5 +1,5 @@
 package com.example.barbershop.dto;
 
-public record EstoqueDTO(ProdutoDTO produtos) {
+public record EstoqueDTO(int id,ProdutoDTO produtos) {
 
 }
